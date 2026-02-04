@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+</head>
+<body>
+  <h1>Student Attendance</h1>
+  <input type="text" id="studentName" placeholder="Your Name">
+  <button onclick="signAttendance()">Sign Attendance</button>
+  <p id="status"></p>
+  <input type="file" id="photo" accept="image/*"><br>
+
+  <script src="Student.js"></script>
+  
+</body>
+</html>
+
