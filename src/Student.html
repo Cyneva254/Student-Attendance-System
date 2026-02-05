@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Attendance</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+    <!-- Firebase Configuration (local config loaded first if exists) -->
+    <script
+      src="config.local.js"
+      onerror="console.log('No local config found, using env vars')"
+    ></script>
+    <script src="config.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📝 Student Attendance</h1>
+
+      <div class="form-group">
+        <label for="studentName">Your Name:</label>
+        <input
+          type="text"
+          id="studentName"
+          placeholder="Enter your full name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="photo">Profile Photo (optional):</label>
+        <input type="file" id="photo" accept="image/*" />
+      </div>
+
+      <button onclick="signAttendance()" class="btn-primary">
+        ✅ Sign Attendance
+      </button>
+
+      <p id="status"></p>
+
+      <div class="info-box">
+        <p>
+          📍 <strong>Note:</strong> You must be within 30 meters of your teacher
+          to sign attendance.
+        </p>
+        <p>📸 Adding a photo helps verify your identity.</p>
+      </div>
+    </div>
+
+    <script src="Student.js"></script>
+  </body>
+</html>
