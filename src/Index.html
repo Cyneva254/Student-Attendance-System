@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Attendance Portal</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+    <!-- Firebase Configuration (local config loaded first if exists) -->
+    <script
+      src="config.local.js"
+      onerror="console.log('No local config found, using env vars')"
+    ></script>
+    <script src="config.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎓 Teacher Attendance Portal</h1>
+
+      <div class="controls">
+        <button onclick="startAttendance()" class="btn-primary">
+          📍 Open Attendance
+        </button>
+        <button onclick="closeAttendance()" class="btn-secondary">
+          🔒 Close Attendance
+        </button>
+        <button onclick="clearAttendance()" class="btn-danger">
+          🗑️ Clear Records
+        </button>
+      </div>
+
+      <p id="status"></p>
+
+      <h2>📱 Scan QR Code to Join</h2>
+      <div id="qrCode"></div>
+
+      <h2>👥 Students Signed Attendance</h2>
+      <ul id="studentList"></ul>
+
+      <h3>Total Students Signed: <span id="totalCount">0</span></h3>
+    </div>
+
+    <script src="Teacher.js"></script>
+  </body>
+</html>
