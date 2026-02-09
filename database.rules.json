@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "attendance": {
+      "session": {
+        ".read": true,
+        ".write": true
+      },
+      "students": {
+        ".read": true,
+        ".write": true,
+        ".indexOn": ["regNumber", "timestamp"]
+      }
+    }
+  }
+}
