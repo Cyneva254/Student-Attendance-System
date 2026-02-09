@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Attendance Portal</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Firebase SDK from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Firebase Configuration -->
+    <script>
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBcQjfn8PtDBcSZdAkwTN54DPugcUJDHXU",
+        authDomain: "student-attendance-syste-992e9.firebaseapp.com",
+        databaseURL:
+          "https://student-attendance-syste-992e9-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "student-attendance-syste-992e9",
+        storageBucket: "student-attendance-syste-992e9.firebasestorage.app",
+        messagingSenderId: "1018526780498",
+        appId: "1:1018526780498:web:8487674392b0826a6be38b",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      console.log("Firebase initialized ✅");
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Home</a>
+
+      <h1>🎓 Teacher Attendance Portal</h1>
+
+      <div class="controls">
+        <button onclick="startAttendance()" class="btn-primary">
+          📍 Open Attendance
+        </button>
+        <button onclick="closeAttendance()" class="btn-secondary">
+          🔒 Close Attendance
+        </button>
+        <button onclick="clearAttendance()" class="btn-danger">
+          🗑️ Clear Records
+        </button>
+      </div>
+
+      <p id="status" class="status-message">Loading...</p>
+
+      <div class="qr-section">
+        <h2>📱 Scan QR Code to Join</h2>
+        <div id="qrCode" class="qr-container">
+          <p class="qr-placeholder">
+            Click "Open Attendance" to generate QR code
+          </p>
+        </div>
+      </div>
+
+      <div class="students-section">
+        <h2>👥 Students Signed Attendance</h2>
+        <ul id="studentList" class="student-list"></ul>
+        <h3>Total Students Signed: <span id="totalCount">0</span></h3>
+      </div>
+    </div>
+
+    <script src="js/teacher.js"></script>
+  </body>
+</html>

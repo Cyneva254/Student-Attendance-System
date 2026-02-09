@@ -20,8 +20,7 @@ const firebaseConfig = {
   authDomain: window.FIREBASE_AUTH_DOMAIN || "YOUR_AUTH_DOMAIN",
   projectId: window.FIREBASE_PROJECT_ID || "YOUR_PROJECT_ID",
   storageBucket: window.FIREBASE_STORAGE_BUCKET || "YOUR_STORAGE_BUCKET",
-  messagingSenderId:
-    window.FIREBASE_MESSAGING_SENDER_ID || "YOUR_MESSAGING_SENDER_ID",
+  messagingSenderId: window.FIREBASE_MESSAGING_SENDER_ID || "YOUR_MESSAGING_SENDER_ID",
   appId: window.FIREBASE_APP_ID || "YOUR_APP_ID",
   databaseURL: window.FIREBASE_DATABASE_URL || "YOUR_DATABASE_URL",
 };
