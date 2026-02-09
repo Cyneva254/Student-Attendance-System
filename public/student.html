@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Attendance</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Firebase SDK from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
+
+    <!-- Firebase Configuration -->
+    <script>
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBcQjfn8PtDBcSZdAkwTN54DPugcUJDHXU",
+        authDomain: "student-attendance-syste-992e9.firebaseapp.com",
+        databaseURL:
+          "https://student-attendance-syste-992e9-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "student-attendance-syste-992e9",
+        storageBucket: "student-attendance-syste-992e9.firebasestorage.app",
+        messagingSenderId: "1018526780498",
+        appId: "1:1018526780498:web:8487674392b0826a6be38b",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      console.log("Firebase initialized ✅");
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Home</a>
+
+      <h1>📝 Student Attendance</h1>
+
+      <div class="form-group">
+        <label for="studentName">Your Name:</label>
+        <input
+          type="text"
+          id="studentName"
+          placeholder="Enter your full name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="regNumber">Registration Number:</label>
+        <input
+          type="text"
+          id="regNumber"
+          placeholder="Enter your registration number"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="photo">Profile Photo (optional):</label>
+        <input type="file" id="photo" accept="image/*" capture="user" />
+      </div>
+
+      <button onclick="signAttendance()" class="btn-primary btn-large">
+        ✅ Sign Attendance
+      </button>
+
+      <p id="status" class="status-message"></p>
+
+      <div class="info-box">
+        <p>
+          📍 <strong>Note:</strong> You must be within 30 meters of your teacher
+          to sign attendance.
+        </p>
+        <p>📸 Adding a photo helps verify your identity.</p>
+        <p>🔒 Your location is only used to verify attendance proximity.</p>
+      </div>
+    </div>
+
+    <script src="js/student.js"></script>
+  </body>
+</html>
